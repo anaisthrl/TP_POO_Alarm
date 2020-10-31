@@ -1,23 +1,27 @@
 public class CAlarmTrigger extends CAlarm implements ITrigger<CAlarmTrigger>{
 	
-	//attributs
-	private CAlarmClock alarmClock;
+	//classe utilisant l'héritage mutiple, elle récupère l'interface ITRigger qui permet de déclencher une action et CAlarm
+	
+	/*..........ATTRIBUTS..........*/
+	//son de l'alarme
 	private String sound;
 	
-	public CAlarmTrigger(String end, String sound){
+	//constructeur
+	CAlarmTrigger(String end, String sound){
 		super(sound);
-		alarmClock = new CAlarmClock();
 		this.sound = sound;
 	}
 	
+	/*.........METHODES..........*/
+	//lance l'alarme dans la console à l'aide de l'interface
 	public CAlarmTrigger trigger() {
 		System.out.println(this.sound);
         return this;
 	}
 	
+	//active l'alarme 
 	public void activeAlarm()
 	{
 		this.trigger();
 	}
-
 }

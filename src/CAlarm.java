@@ -1,8 +1,9 @@
 public class CAlarm{
 	
-	//constructeur
+	//Classe représentant l'objet Alarm
 	
-	public CAlarm(String sound){
+	//constructeur
+	CAlarm(String sound){
         System.out.println(sound);
     }
 
