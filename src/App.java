@@ -2,12 +2,16 @@ import java.util.Scanner;
 
 public class App {
 	
-	static String heure, minutes, secondes = "0";
+	static CWindow windowMenu ;
 	
 	public static void main(String[] args)
     {
+		/*..................MODE APPLICATION.............*/
 		
-		//vérifie si l'utilisateur a choisi un objet
+		windowMenu = new CWindow();
+
+		/*...................MODE CONSOLE.................*/
+		/*//vérifie si l'utilisateur a choisi un objet
 		boolean isChoised = false ;
 		
 		while(isChoised == false) {
@@ -39,12 +43,12 @@ public class App {
 	
 	//REVEIL
 	public static void goAlarmClock() {
-		System.out.println("Dans combien de temps voulez vous vous réveiller ?");
+		//System.out.println("Dans combien de temps voulez vous vous réveiller ?");
 		
-		userInteractions();
+		//userInteractions();
 		
 		//Création de l'alarme
-		CAlarmAlarmClock alarmAlarmClock1 = new CAlarmAlarmClock(heure + ":" + minutes + ":" + secondes); 
+		CAlarmAlarmClock alarmAlarmClock1 = new CAlarmAlarmClock(windowMenu.getHours() + ":" + windowMenu.getMinutes() + ":" + windowMenu.getSeconds()); 
 								
 		//lancement de l'alarme
 		alarmAlarmClock1.rool();
@@ -52,12 +56,12 @@ public class App {
 	
 	//RADIO
 	public static void goRadio() {
-		System.out.println("Dans combien de temps voulez vous mettre en route la radio ?");
+		//System.out.println("Dans combien de temps voulez vous mettre en route la radio ?");
 		
-		userInteractions();
+		//userInteractions();
 		
 		//Création de l'alarme
-		CRadioAlarmClock radioAlarmClock1 = new CRadioAlarmClock(heure + ":" + minutes + ":" + secondes); 
+		CRadioAlarmClock radioAlarmClock1 = new CRadioAlarmClock(windowMenu.getHours() + ":" + windowMenu.getMinutes() + ":" + windowMenu.getSeconds()); 
 										
 		//lancement de l'alarme
 		radioAlarmClock1.rool();
@@ -65,12 +69,12 @@ public class App {
 	
 	//CAFE
 	public static void goCafe() {
-		System.out.print("Dans combien de temps voulez vous avoir votre café de prêt ? ");
+		//System.out.print("Dans combien de temps voulez vous avoir votre café de prêt ? ");
 		
-		userInteractions();
+		//userInteractions();
 		
 		//Création de l'alarme
-		CCoffeeAlarmClock coffeeAlarmClock1 = new CCoffeeAlarmClock(heure + ":" + minutes + ":" + secondes); 
+		CCoffeeAlarmClock coffeeAlarmClock1 = new CCoffeeAlarmClock(windowMenu.getHours() + ":" + windowMenu.getMinutes() + ":" + windowMenu.getSeconds()); 
 										
 		//lancement de l'alarme
 		coffeeAlarmClock1.rool();
@@ -105,7 +109,7 @@ public class App {
 			secondes = inputAlarm.nextLine();
 			if(Integer.parseInt(secondes) > 59) System.out.println("Erreur: Entrez un nombre de seconde inférieur à 60");
 			if(Integer.parseInt(secondes)<60) secondsAreOk = true;
-		}
+		}*/
 	}
 		
 }

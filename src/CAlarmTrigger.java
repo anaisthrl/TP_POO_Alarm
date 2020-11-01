@@ -15,7 +15,6 @@ public class CAlarmTrigger extends CAlarm implements ITrigger<CAlarmTrigger>{
 	/*.........METHODES..........*/
 	//lance l'alarme dans la console à l'aide de l'interface
 	public CAlarmTrigger trigger() {
-		System.out.println(this.sound);
         return this;
 	}
 	

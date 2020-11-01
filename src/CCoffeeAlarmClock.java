@@ -17,7 +17,7 @@ public class CCoffeeAlarmClock extends CAlarmClock{
 	   public void checkAlarm(){
 	       if(super.toString().equals(end)){
 	        //activation de la radio
-	        new CRadioTrigger(end, "Café est prêt !");
+	        new CCoffeeTrigger(end, "Café est prêt !");
 	        //arrêt du compteur
 	        super.stopWatch();
 	       }
