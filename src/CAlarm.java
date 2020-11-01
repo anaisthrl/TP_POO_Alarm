@@ -6,6 +6,7 @@ public class CAlarm{
 	/*............ATTRIBUTS..............*/
 	CWindowResult windowResult;
 	CResultContainer resultContainer;
+	
 	//constructeur
 	CAlarm(String sound){
         System.out.println(sound);

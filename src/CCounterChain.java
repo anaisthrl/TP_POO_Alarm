@@ -34,6 +34,7 @@ public class CCounterChain {
 		
 	public void display() {
 		System.out.println(toString());
+		
 	}
 
 	public String toString() {

@@ -20,7 +20,7 @@ public class CRadioContainer extends JPanel{
 	CRadioContainer(){
 		this.setLayout(new BorderLayout());
 		
-		hourContainer = new CHourContainer("Dans combien de temps voulez-vous vous réveiller ? ");
+		hourContainer = new CHourContainer("Dans combien de temps voulez-vous lancer la radio ? ");
 		resultContainer = new CResultContainer("");
 		
 		createButtonTitle();

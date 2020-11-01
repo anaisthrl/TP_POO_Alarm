@@ -1,4 +1,5 @@
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
@@ -19,6 +20,7 @@ public class CAlarmClockContainer extends JPanel{
 	CAlarmClockContainer(){
 		
 		this.setLayout(new BorderLayout());
+		this.setBackground(Color.decode("#f1d8f1"));
 		
 		hourContainer = new CHourContainer("Dans combien de temps voulez-vous vous réveiller ? ");
 		
