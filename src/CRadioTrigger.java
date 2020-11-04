@@ -1,4 +1,4 @@
-public class CRadioTrigger extends CAlarm implements ITrigger<CRadioTrigger>{
+public class CRadioTrigger extends CRadio implements ITrigger<CRadioTrigger>{
 	
 	//classe utilisant l'héritage mutiple, elle récupère l'interface ITRigger qui permet de déclencher une action et CAlarm
 	/*..........ATTRIBUTS..........*/

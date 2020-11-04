@@ -1,4 +1,4 @@
-public class CCoffeeTrigger extends CAlarm implements ITrigger<CCoffeeTrigger>{
+public class CCoffeeTrigger extends CCoffee implements ITrigger<CCoffeeTrigger>{
 	
 	//classe utilisant l'héritage mutiple, elle récupère l'interface ITRigger qui permet de déclencher une action et CAlarm
 		/*..........ATTRIBUTS..........*/
