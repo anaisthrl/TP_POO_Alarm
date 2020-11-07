@@ -5,39 +5,44 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 public class CRadioContainer extends JPanel{
 	
 	private JButton buttonTitle;
 	private JButton buttonGo;
-	private CHourContainer hourContainer;
+	private CHourContainer hourContainer = new CHourContainer("Dans combien de temps voulez-vous que votre café soit prêt ? ");
 	private JPanel bigContainer;
-	private CResultContainer resultContainer;
 	private CRadioAlarmClock radioAlarmClock1;
-	private String erreur = "";
+	private String text = "nothing";
 	
-	CRadioContainer(){
+	CRadioContainer(String text){
+		this.text = text;
+		
+		System.out.println("in alarm :" + this.text);
+		
 		this.setLayout(new BorderLayout());
 		
-		hourContainer = new CHourContainer("Dans combien de temps voulez-vous lancer la radio ? ");
-		resultContainer = new CResultContainer("");
+		makeContainer();
+	}
+	
+	public void makeContainer() {
+		System.out.println("in make :" + this.text);
 		
 		createButtonTitle();
 		this.add(buttonTitle, BorderLayout.NORTH);
 		
 		bigContainer = new JPanel();
 		bigContainer.setLayout(new GridLayout(3,1));
+		
 		bigContainer.add(hourContainer);
-		bigContainer.add(resultContainer);
+		bigContainer.add(new JLabel(this.text));
+		
 		this.add(bigContainer, BorderLayout.CENTER);
 		
 		createButtonGo();
 		this.add(buttonGo, BorderLayout.SOUTH);
-	}
-	
-	public void paintComponent(Graphics g) {
-		g.drawRect(0, 0, this.getWidth(), this.getHeight());
 	}
 	
 	private void createButtonTitle() {
@@ -56,18 +61,12 @@ public class CRadioContainer extends JPanel{
 			
 			if(Integer.parseInt(hourContainer.getInputSecondTime().getText())<0 ||Integer.parseInt(hourContainer.getInputMinuteTime().getText())>59) {
 				System.out.println("Erreur: Entrez un nombre de minutes inférieur à 60");
-				erreur="Erreur: Entrez un nombre de minutes inférieur à 60";
-				resultContainer = new CResultContainer(erreur);
-				bigContainer.add(resultContainer);
-				CAlarmClockContainer alarmClockContainer = new CAlarmClockContainer();
+				CRadioContainer radioContainer = new CRadioContainer("Erreur: Entrez un nombre de minutes inférieur à 60");
 			}
 			
 			else if(Integer.parseInt(hourContainer.getInputSecondTime().getText())<0 || Integer.parseInt(hourContainer.getInputSecondTime().getText())>59) {
 				System.out.println("Erreur: Entrez un nombre de secondes inférieur à 60");
-				erreur = "Erreur: Entrez un nombre de secondes inférieur à 60";
-				resultContainer = new CResultContainer(erreur);
-				bigContainer.add(resultContainer);
-				CAlarmClockContainer alarmClockContainer = new CAlarmClockContainer();
+				CRadioContainer radioContainer = new CRadioContainer("Erreur: Entrez un nombre de secondes inférieur à 60");
 			}
 			else {
 				radioAlarmClock1 = new CRadioAlarmClock(hourContainer.getInputHourTime().getText() + ":" + hourContainer.getInputMinuteTime().getText() + ":" + hourContainer.getInputSecondTime().getText()); 

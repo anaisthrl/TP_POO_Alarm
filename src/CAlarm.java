@@ -4,15 +4,17 @@ public class CAlarm{
 	
 	//Classe représentant l'objet Alarm
 	/*............ATTRIBUTS..............*/
-	CWindowResult windowResult;
-	CResultContainer resultContainer;
+
+	CResultContainer resultContainer = new CResultContainer("");
 	
 	//constructeur
 	CAlarm(String sound){
         System.out.println(sound);
-        windowResult = new CWindowResult();
+        /*windowResult = new CWindowResult();
         resultContainer = new CResultContainer(sound);
-        windowResult.setResultContainer(this.resultContainer);
+        windowResult.setResultContainer(this.resultContainer);*/
+        this.resultContainer.setMessage(sound);
+        
     }
 
 }
