@@ -21,10 +21,6 @@
  - cafetière <=> CCoffee
  
  Les classes suivantes sont strictement utilisées pour l'interface graphique de l'application: 
- - CAlarmClockContainer
- - CCoffeeContainer
- - CHourContainer
- - CRadioContainer
  - CResultContainer
  - CWindow
  - CWindowResult
