@@ -13,7 +13,6 @@ public class CCoffeeContainer extends JPanel{
 	private JButton buttonGo;
 	private CHourContainer hourContainer;
 	private JPanel bigContainer;
-	private CResultContainer resultContainer;
 	private CCoffeeAlarmClock coffeeAlarmClock1;
 	private String erreur="";
 	
@@ -21,7 +20,6 @@ public class CCoffeeContainer extends JPanel{
 		this.setLayout(new BorderLayout());
 		
 		hourContainer = new CHourContainer("Dans combien de temps voulez-vous que votre café soit prêt ? ");
-		resultContainer = new CResultContainer("");
 		
 		createButtonTitle();
 		this.add(buttonTitle, BorderLayout.NORTH);
@@ -29,7 +27,6 @@ public class CCoffeeContainer extends JPanel{
 		bigContainer = new JPanel();
 		bigContainer.setLayout(new GridLayout(3,1));
 		bigContainer.add(hourContainer);
-		bigContainer.add(resultContainer);
 		this.add(bigContainer, BorderLayout.CENTER);
 		
 		createButtonGo();
@@ -58,17 +55,13 @@ public class CCoffeeContainer extends JPanel{
 			if(Integer.parseInt(hourContainer.getInputSecondTime().getText())<0 ||Integer.parseInt(hourContainer.getInputMinuteTime().getText())>59) {
 				System.out.println("Erreur: Entrez un nombre de minutes inférieur à 60");
 				erreur="Erreur: Entrez un nombre de minutes inférieur à 60";
-				resultContainer = new CResultContainer(erreur);
-				bigContainer.add(resultContainer);
-				CAlarmClockContainer alarmClockContainer = new CAlarmClockContainer();
+				CResultContainer result = new CResultContainer(erreur);
 			}
 			
 			else if(Integer.parseInt(hourContainer.getInputSecondTime().getText())<0 || Integer.parseInt(hourContainer.getInputSecondTime().getText())>59) {
 				System.out.println("Erreur: Entrez un nombre de secondes inférieur à 60");
 				erreur = "Erreur: Entrez un nombre de secondes inférieur à 60";
-				resultContainer = new CResultContainer(erreur);
-				bigContainer.add(resultContainer);
-				CAlarmClockContainer alarmClockContainer = new CAlarmClockContainer();
+				CResultContainer result = new CResultContainer(erreur);
 			}
 			else {
 			

@@ -3,6 +3,7 @@ import java.util.Scanner;
 public class App {
 	
 	static CWindow windowMenu ;
+	static String heure, minutes, secondes;
 	
 	public static void main(String[] args)
     {
@@ -11,7 +12,8 @@ public class App {
 		windowMenu = new CWindow();
 
 		/*...................MODE CONSOLE.................*/
-		/*//vérifie si l'utilisateur a choisi un objet
+		/*userInteractions();
+		//vérifie si l'utilisateur a choisi un objet
 		boolean isChoised = false ;
 		
 		while(isChoised == false) {
@@ -48,7 +50,7 @@ public class App {
 		//userInteractions();
 		
 		//Création de l'alarme
-		CAlarmAlarmClock alarmAlarmClock1 = new CAlarmAlarmClock(windowMenu.getHours() + ":" + windowMenu.getMinutes() + ":" + windowMenu.getSeconds()); 
+		CAlarmAlarmClock alarmAlarmClock1 = new CAlarmAlarmClock(heure + ":" + minutes + ":" + secondes); 
 								
 		//lancement de l'alarme
 		alarmAlarmClock1.rool();
@@ -61,7 +63,7 @@ public class App {
 		//userInteractions();
 		
 		//Création de l'alarme
-		CRadioAlarmClock radioAlarmClock1 = new CRadioAlarmClock(windowMenu.getHours() + ":" + windowMenu.getMinutes() + ":" + windowMenu.getSeconds()); 
+		CRadioAlarmClock radioAlarmClock1 = new CRadioAlarmClock(heure + ":" + minutes + ":" + secondes); 
 										
 		//lancement de l'alarme
 		radioAlarmClock1.rool();
@@ -74,7 +76,7 @@ public class App {
 		//userInteractions();
 		
 		//Création de l'alarme
-		CCoffeeAlarmClock coffeeAlarmClock1 = new CCoffeeAlarmClock(windowMenu.getHours() + ":" + windowMenu.getMinutes() + ":" + windowMenu.getSeconds()); 
+		CCoffeeAlarmClock coffeeAlarmClock1 = new CCoffeeAlarmClock(heure + ":" + minutes + ":" + secondes); 
 										
 		//lancement de l'alarme
 		coffeeAlarmClock1.rool();
@@ -83,6 +85,7 @@ public class App {
 	//interactions utilisateur
 	public static void userInteractions() {
 		
+		System.out.println("Bienvenue");
 		//va récupérer le texte tapé dans la console pour l'heure
 		Scanner inputAlarm = new Scanner(System.in);
 		

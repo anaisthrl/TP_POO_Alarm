@@ -5,7 +5,6 @@ public class CWatch extends CCounterChain {
 	/*.................ATTRIBUTS..................*/
 	//booléen qui va vérifier sur la montre tourne
 	private boolean isRool = true;
-
 		
 	//constructeur
 	CWatch() {

@@ -1,7 +1,10 @@
 import java.awt.BorderLayout;
+import java.awt.Font;
 import java.awt.Graphics;
 
+import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.SwingConstants;
 
 public class CResultContainer extends JPanel {
 
@@ -9,11 +12,15 @@ public class CResultContainer extends JPanel {
 	
 	CResultContainer(String message){
 		this.message = message;
-		System.out.println("message :" + message);
+		
+		JLabel label = new JLabel(this.message,SwingConstants.CENTER);
+		label.setFont(new Font("Verdana", Font.PLAIN, 15));
+		CWinResult winResult = new CWinResult();
+		winResult.setContentPane(label);
 	}
 	
-	public void paintComponent (Graphics g) {
-		g.drawString(message, this.getWidth()/4, this.getHeight()/2);
+	public void setMessage(String message) {
+		this.message = message;
 	}
 	
 }

@@ -3,11 +3,13 @@ public class CCounterChain {
 	//attributs
 	
 	private CCounter[] tabCounter; //tableau de compteurs
+	//CResultContainer resultContainer;
 
 	//constructeur
 		
 	public CCounterChain(int nbCounter, int[] min, int[] max, int[] step) {
 		this.tabCounter = new CCounter[nbCounter];
+		//resultContainer = new CResultContainer("0:0:0");
 		for (int i = 0; i < nbCounter; i++) {
 			this.tabCounter[i] = new CCounter(min[i], max[i], step[i]);
 		}
@@ -33,8 +35,7 @@ public class CCounterChain {
 	//affichage
 		
 	public void display() {
-		System.out.println(toString());
-		
+		System.out.println(this.toString());
 	}
 
 	public String toString() {
