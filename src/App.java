@@ -2,8 +2,10 @@ import java.util.Scanner;
 
 public class App {
 	
-	static CWindow windowMenu ;
-	static String heure, minutes, secondes;
+	//décommenter la version console pour l'utiliser
+	
+	static CWindow windowMenu ; //utilisé dans la version application
+	static String heure, minutes, secondes; //utilisé dans la version console
 	
 	public static void main(String[] args)
     {

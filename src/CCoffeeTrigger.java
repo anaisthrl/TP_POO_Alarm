@@ -3,18 +3,18 @@ public class CCoffeeTrigger extends CCoffee implements ITrigger<CCoffeeTrigger>{
 	//classe utilisant l'héritage mutiple, elle récupère l'interface ITRigger qui permet de déclencher une action et CAlarm
 		/*..........ATTRIBUTS..........*/
 		//son de l'alarme
-		private String soundOfMachine;
+		private String typeCoffee;
 		
 		//constructeur
-		CCoffeeTrigger(String end, String soundOfMachine){
-			super(soundOfMachine);
-			this.soundOfMachine = soundOfMachine;
+		CCoffeeTrigger(String end, String typeCoffee){
+			super(typeCoffee);
+			this.typeCoffee = typeCoffee;
 		}
 		
 		/*.........METHODES..........*/
 		//lance l'alarme dans la console à l'aide de l'interface
 		public CCoffeeTrigger trigger() {
-			System.out.println(this.soundOfMachine);
+			System.out.println(this.typeCoffee);
 	        return this;
 		}
 		

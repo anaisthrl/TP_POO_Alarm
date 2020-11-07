@@ -22,7 +22,7 @@ public class CWindow extends JFrame{
 	
 	public JPanel mainPanel = new JPanel();
 	public JPanel interactionPanel = new JPanel();
-	public JPanel bigChoiseAlarmPanel = new JPanel();
+	public JPanel bigChoisePanel = new JPanel();
 	private JPanel timePanel = new JPanel();
 	private JPanel bigObjectPanel = new JPanel();
 	
@@ -101,16 +101,28 @@ public class CWindow extends JFrame{
 		
 		//création d'un panel pour le formulaire
 		JPanel panelForm = new JPanel();
-		panelForm.setLayout(new GridLayout(1,3));
+		panelForm.setLayout(new GridLayout(1,6));
 		
-		inputHourTime = new JTextField("heures", 10);
+		inputHourTime = new JTextField("0", 10);
 		panelForm.add(inputHourTime);
 		
-		inputMinuteTime = new JTextField("minutes", 10);
+		JLabel hourLabel = new JLabel(": h");
+		hourLabel.setFont(new Font("Verdana", Font.PLAIN, 15));
+		panelForm.add(hourLabel);
+		
+		inputMinuteTime = new JTextField("0", 10);
 		panelForm.add(inputMinuteTime);
 		
-		inputSecondTime = new JTextField("secondes", 10);
+		JLabel minuteLabel = new JLabel(": m");
+		minuteLabel.setFont(new Font("Verdana", Font.PLAIN, 15));
+		panelForm.add(minuteLabel);
+		
+		inputSecondTime = new JTextField("1", 10);
 		panelForm.add(inputSecondTime);
+		
+		JLabel secondLabel = new JLabel(": s");
+		secondLabel.setFont(new Font("Verdana", Font.PLAIN, 15));
+		panelForm.add(secondLabel);
 		
 		timePanel.add(panelForm);
 	}
@@ -139,7 +151,6 @@ public class CWindow extends JFrame{
 		
 	}
 	
-	
 	private void go() {
 		
 		goButton.addActionListener(new ButtonGoListener());
@@ -164,11 +175,63 @@ public class CWindow extends JFrame{
 		label.setFont(new Font("Verdana", Font.PLAIN, 15));
 		
 		//regroupement des deux 
-		bigChoiseAlarmPanel.setLayout(new GridLayout(2,1));
-		bigChoiseAlarmPanel.add(label);
-		bigChoiseAlarmPanel.add(choiseAlarmPanel);
+		bigChoisePanel.setLayout(new GridLayout(2,1));
+		bigChoisePanel.add(label);
+		bigChoisePanel.add(choiseAlarmPanel);
 		
-		interactionPanel.add(bigChoiseAlarmPanel);	
+		interactionPanel.add(bigChoisePanel);	
+		
+	}
+	
+	public void createCoffeePanel() {
+		
+		//on va créer ici la section pour choisir quelle sonnerie nous voulons
+		
+		//création des boutons
+		JPanel choiseCoffeePanel = new JPanel();
+		choiseCoffeePanel.setLayout(new GridLayout(1,coffeeAlarmClock.getCoffeeLength()));
+		
+		for(int i=0; i<coffeeAlarmClock.getCoffeeLength(); i++) {
+			JButton buttonCoffee = new JButton(coffeeAlarmClock.getCoffees()[i]);
+			buttonCoffee.addActionListener(new ButtonCoffeesListener(i));
+			choiseCoffeePanel.add(buttonCoffee);
+		}
+		//création de l'explication de la zone
+		JLabel label = new JLabel("Vous pouvez choisir votre café (par défaut le premier)",SwingConstants.CENTER);
+		label.setFont(new Font("Verdana", Font.PLAIN, 15));
+		
+		//regroupement des deux 
+		bigChoisePanel.setLayout(new GridLayout(2,1));
+		bigChoisePanel.add(label);
+		bigChoisePanel.add(choiseCoffeePanel);
+		
+		interactionPanel.add(bigChoisePanel);	
+		
+	}
+	
+	public void createRadioPanel() {
+		
+		//on va créer ici la section pour choisir quelle sonnerie nous voulons
+		
+		//création des boutons
+		JPanel choiseRadioPanel = new JPanel();
+		choiseRadioPanel.setLayout(new GridLayout(1,radioAlarmClock.getRadiosLength()));
+		
+		for(int i=0; i<radioAlarmClock.getRadiosLength(); i++) {
+			JButton buttonCoffee = new JButton(radioAlarmClock.getRadios()[i]);
+			buttonCoffee.addActionListener(new ButtonRadiosListener(i));
+			choiseRadioPanel.add(buttonCoffee);
+		}
+		//création de l'explication de la zone
+		JLabel label = new JLabel("Vous pouvez choisir votre radio (par défaut la première)",SwingConstants.CENTER);
+		label.setFont(new Font("Verdana", Font.PLAIN, 15));
+		
+		//regroupement des deux 
+		bigChoisePanel.setLayout(new GridLayout(2,1));
+		bigChoisePanel.add(label);
+		bigChoisePanel.add(choiseRadioPanel);
+		
+		interactionPanel.add(bigChoisePanel);	
 		
 	}
 	
@@ -190,12 +253,10 @@ public class CWindow extends JFrame{
 				}
 				
 				else if(isChoiseRadio) {
-					radioAlarmClock = new CRadioAlarmClock(inputHourTime.getText() + ":" + inputMinuteTime.getText() + ":" + inputSecondTime.getText());
 					radioAlarmClock.rool();
 				}
 				
 				else if(isChoiseCoffee) {
-					coffeeAlarmClock = new CCoffeeAlarmClock(inputHourTime.getText() + ":" + inputMinuteTime.getText() + ":" + inputSecondTime.getText());
 					coffeeAlarmClock.rool();
 				}
 				
@@ -238,6 +299,11 @@ public class CWindow extends JFrame{
 			inputSecondTime.setEnabled(false);
 			
 			resultLabel.setText("Validez et votre radio se mettra en route : " + inputHourTime.getText() + " heure(s), "+ inputMinuteTime.getText() +" minute(s) et "+ inputSecondTime.getText()+ " secondes après.");
+			radioAlarmClock = new CRadioAlarmClock(inputHourTime.getText() + ":" + inputMinuteTime.getText() + ":" + inputSecondTime.getText(), 0);
+			createRadioPanel();
+			
+			interactionPanel.add(goButton);
+			go();
 		}
 	}
 	
@@ -253,6 +319,11 @@ public class CWindow extends JFrame{
 			inputSecondTime.setEnabled(false);
 			
 			resultLabel.setText("Validez et vous pourrez boire votre café : " + inputHourTime.getText() + " heure(s), "+ inputMinuteTime.getText() +" minute(s) et "+ inputSecondTime.getText()+ " secondes après.");
+			coffeeAlarmClock = new CCoffeeAlarmClock(inputHourTime.getText() + ":" + inputMinuteTime.getText() + ":" + inputSecondTime.getText(), 0);
+			createCoffeePanel();
+			
+			interactionPanel.add(goButton);
+			go();
 		}
 	}
 	
@@ -269,6 +340,34 @@ public class CWindow extends JFrame{
 			resultLabel.setText("Votre choix de sonnerie est : " + alarmAlarmClock.getAlarms()[this.nbChoised] + (" ( " + inputHourTime.getText() + ":" + inputMinuteTime.getText() + ":" + inputSecondTime.getText()) + " )");
 		}
 		
+	}
+	
+	class ButtonCoffeesListener implements ActionListener{
+	
+		private int nbChoised = 0;
+		
+		public ButtonCoffeesListener(int nbChoised) {
+			this.nbChoised = nbChoised;
+		}
+		
+		public void actionPerformed(ActionEvent e) {
+			coffeeAlarmClock.setNbOfCoffeeChoised(this.nbChoised);
+			resultLabel.setText("Votre choix de sonnerie est : " + coffeeAlarmClock.getCoffees()[this.nbChoised] + (" ( " + inputHourTime.getText() + ":" + inputMinuteTime.getText() + ":" + inputSecondTime.getText()) + " )");
+		}
+	}
+	
+	class ButtonRadiosListener implements ActionListener{
+		
+		private int nbChoised = 0;
+		
+		public ButtonRadiosListener(int nbChoised) {
+			this.nbChoised = nbChoised;
+		}
+		
+		public void actionPerformed(ActionEvent e) {
+			radioAlarmClock.setNbOfRadioChoised(this.nbChoised);
+			resultLabel.setText("Votre choix de sonnerie est : " + radioAlarmClock.getRadios()[this.nbChoised] + (" ( " + inputHourTime.getText() + ":" + inputMinuteTime.getText() + ":" + inputSecondTime.getText()) + " )");
+		}
 	}
 }
 

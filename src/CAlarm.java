@@ -11,7 +11,7 @@ public class CAlarm{
 	//constructeur
 	CAlarm(String sound){
         System.out.println(sound);
-        resultContainer = new CResultContainer(sound);
+        resultContainer = new CResultContainer(sound); //pour l'affichage dans une nouvelle fenêtre
     }
 
 }

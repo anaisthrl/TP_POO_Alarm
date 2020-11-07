@@ -6,11 +6,11 @@ public class CAlarmTrigger extends CAlarm implements ITrigger<CAlarmTrigger>{
 	
 	//constructeur
 	CAlarmTrigger(String end, String sound){
-		super(sound);
+		super(sound); //CAlarm
 	}
 	
 	/*.........METHODES..........*/
-	//lance l'alarme dans la console à l'aide de l'interface
+	//lance l'alarme à l'aide de l'interface
 	public CAlarmTrigger trigger() {
         return this;
 	}

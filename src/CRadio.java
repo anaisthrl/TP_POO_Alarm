@@ -7,6 +7,6 @@ public class CRadio {
 	//constructeur
 	CRadio(String chaine){
 		System.out.println(chaine);
-		resultContainer = new CResultContainer(chaine);
+		resultContainer = new CResultContainer(chaine); //pour l'affichage dans une nouvelle fenetre
 	}
 }
