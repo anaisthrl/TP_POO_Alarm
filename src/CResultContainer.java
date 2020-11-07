@@ -1,24 +1,19 @@
 import java.awt.BorderLayout;
 import java.awt.Graphics;
 
-import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-public class CResultContainer extends JLabel {
+public class CResultContainer extends JPanel {
 
 	private String message;
-
+	
 	CResultContainer(String message){
 		this.message = message;
-	};
-
-	
-	public String getMessage() {
-		return this.message;
+		System.out.println("message :" + message);
 	}
 	
-	public void setMessage(String newMessage) {
-		System.out.println("Je set le message");
-		this.message = newMessage;
+	public void paintComponent (Graphics g) {
+		g.drawString(message, this.getWidth()/4, this.getHeight()/2);
 	}
+	
 }

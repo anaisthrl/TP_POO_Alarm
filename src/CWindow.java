@@ -16,11 +16,10 @@ public class CWindow extends JFrame{
 	/*.............ATTRIBUTS.............*/
 	
 	private JPanel mainContainer = new JPanel();
-	//private CHourContainer hourContainer = new CHourContainer("");
-	private CAlarmClockContainer alarmClockContainer= new CAlarmClockContainer("");
-	private CRadioContainer radioContainer = new CRadioContainer("");
-	private CCoffeeContainer coffeeContainer = new CCoffeeContainer("");
-	private String textAlarmClock;
+	private CHourContainer hourContainer;
+	private CAlarmClockContainer alarmClockContainer;
+	private CRadioContainer radioContainer;
+	private CCoffeeContainer coffeeContainer;
 	
 	
 	//constructeur
@@ -30,7 +29,12 @@ public class CWindow extends JFrame{
 		this.setSize(1200,800);
 		this.setLocationRelativeTo(null); //se placer au centre
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		this.textAlarmClock = alarmClockContainer.getText();
+		
+		hourContainer = new CHourContainer("");
+		alarmClockContainer = new CAlarmClockContainer();
+		radioContainer = new CRadioContainer();
+		coffeeContainer = new CCoffeeContainer();
+
 		mainContainer.setBackground(Color.white);
 		mainContainer.setLayout(new GridLayout(1,3));
 
