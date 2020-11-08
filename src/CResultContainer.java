@@ -1,6 +1,7 @@
 import java.awt.BorderLayout;
 import java.awt.Font;
 import java.awt.Graphics;
+import java.awt.GridLayout;
 
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -14,8 +15,10 @@ public class CResultContainer extends JPanel {
 		this.message = message;
 		
 		JLabel label = new JLabel(this.message,SwingConstants.CENTER);
-		label.setFont(new Font("Verdana", Font.PLAIN, 15));
+		label.setFont(new Font("Verdana", Font.PLAIN, 30));
+		
 		CWinResult winResult = new CWinResult();
+		
 		winResult.setContentPane(label);
 	}
 	

@@ -14,7 +14,6 @@ public class CCoffeeTrigger extends CCoffee implements ITrigger<CCoffeeTrigger>{
 		/*.........METHODES..........*/
 		//lance l'alarme dans la console à l'aide de l'interface
 		public CCoffeeTrigger trigger() {
-			System.out.println(this.typeCoffee);
 	        return this;
 		}
 		

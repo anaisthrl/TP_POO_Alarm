@@ -1,6 +1,6 @@
 public class CCounterChain {
 	
-	//attributs
+	/*.....attributs.....*/
 	
 	private CCounter[] tabCounter; //tableau de compteurs
 	//CResultContainer resultContainer;
@@ -15,7 +15,7 @@ public class CCounterChain {
 		}
 	}
 		
-	//méthodes
+	/*.....Méthodes.....*/
 		
 	//incrémentation de ma chaine de compteur
 	public void increment() {

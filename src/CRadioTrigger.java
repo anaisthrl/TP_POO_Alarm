@@ -14,7 +14,6 @@ public class CRadioTrigger extends CRadio implements ITrigger<CRadioTrigger>{
 	/*.........METHODES..........*/
 	//lance l'alarme dans la console à l'aide de l'interface
 	public CRadioTrigger trigger() {
-		System.out.println(this.radiostation);
         return this;
 	}
 	

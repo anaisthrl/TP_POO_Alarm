@@ -12,7 +12,7 @@ public class App {
 		/*..................MODE APPLICATION.............*/
 		
 		windowMenu = new CWindow();
-
+		
 		/*...................MODE CONSOLE.................*/
 		/*userInteractions();
 		//vérifie si l'utilisateur a choisi un objet

@@ -6,7 +6,7 @@ public class CRadioAlarmClock extends CAlarmClock{
 	private String end;
 	private int nbOfRadioChoised = 0;
 	
-	String[] radios = {"NRJ", "France Culture"};
+	String[] radios = {"NRJ", "France Culture", "Radio Scoop", "France inter"};
 	
 	//constructeur
 	CRadioAlarmClock(String end, int nbOfRadioChoised) {
