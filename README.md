@@ -23,7 +23,7 @@
  Les classes suivantes sont strictement utilisées pour l'interface graphique de l'application: 
  - CResultContainer
  - CWindow
- - CWindowResult
+ - CWinResult
 
 ** Utilisation (version graphique) **
 Une fois l'application ouverte vous pouvez entrer un temps d'attente avant qu'une action (réveil, machine à café, radio) se mette en marche. ! le temps 0:0:0 ne marche pas !
