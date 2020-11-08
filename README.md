@@ -30,5 +30,8 @@ Une fois l'application ouverte vous pouvez entrer un temps d'attente avant qu'un
 Ensuite choisissez l'objet, une fois choisi, vous ne pourrez pas revenir en arrière. 
 Vous pouvez apprésent valider votre choix et attendre pour voir le résultat !
 
+** Utilisation (version console) **
+Téléchargez le repository et lancez-le sur votre IDE java. Dans la class "App.java" suivez les instructions: commentez la partie interface graphique et décommentez la partie console.
+
 ** A améliorer **
 (version graphique) Nous aurions voulu afficher le compteur sur notre fenêtre pour que l'utilisateur voit le temps qu'il lui reste à attendre, malheureusement il aurait fallu utiliser la méthode du multi threading mais nous n'avons pas eu assez de temps.
