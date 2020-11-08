@@ -25,4 +25,10 @@
  - CWindow
  - CWindowResult
 
-**
+** Utilisation (version graphique) **
+Une fois l'application ouverte vous pouvez entrer un temps d'attente avant qu'une action (réveil, machine à café, radio) se mette en marche. ! le temps 0:0:0 ne marche pas !
+Ensuite choisissez l'objet, une fois choisi, vous ne pourrez pas revenir en arrière. 
+Vous pouvez apprésent valider votre choix et attendre pour voir le résultat !
+
+** A améliorer **
+(version graphique) Nous aurions voulu afficher le compteur sur notre fenêtre pour que l'utilisateur voit le temps qu'il lui reste à attendre, malheureusement il aurait fallu utiliser la méthode du multi threading mais nous n'avons pas eu assez de temps.
