@@ -276,8 +276,8 @@ public class CWindow extends JFrame{
 				
 			}
 			
-			else if(Integer.parseInt(inputSecondTime.getText())<=0 || Integer.parseInt(inputSecondTime.getText())>59) {
-				resultLabel.setText("Entrez un nombre de seconde valide (<59 ou > 0)");
+			else if((Integer.parseInt(inputSecondTime.getText())<=0 && Integer.parseInt(inputMinuteTime.getText())<=0)|| Integer.parseInt(inputSecondTime.getText())>59) {
+				resultLabel.setText("Entrez un nombre de seconde valide (<59 ou >= 0)");
 			}
 			
 			else {
