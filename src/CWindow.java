@@ -25,34 +25,34 @@ public class CWindow extends JFrame{
 	
 	/*.............ATTRIBUTS.............*/
 	
-	public JPanel mainPanel = new JPanel();
-	public JPanel interactionPanel = new JPanel();
-	public JPanel bigChoisePanel = new JPanel();
-	private JPanel timePanel = new JPanel();
-	private JPanel bigObjectPanel = new JPanel();
+	 JPanel mainPanel = new JPanel();
+	 JPanel interactionPanel = new JPanel();
+	 JPanel bigChoisePanel = new JPanel();
+	 JPanel timePanel = new JPanel();
+	 JPanel bigObjectPanel = new JPanel();
 	
-	public JLabel resultLabel = new JLabel();
-	public JLabel chronoLabel = new JLabel();
+	 JLabel resultLabel = new JLabel();
+	 JLabel chronoLabel = new JLabel();
 	
-	private JTextField inputHourTime, inputMinuteTime, inputSecondTime;
+	 JTextField inputHourTime, inputMinuteTime, inputSecondTime;
 	
-	public JButton goButton = new JButton("Valider");
-	public JButton retryButton = new JButton("Recommencer");
-	private JButton alarmClockButton = new JButton("Réveil");
-	private JButton radioButton = new JButton("Radio");
-	private JButton coffeeButton = new JButton("Machine à café");
+	 JButton goButton = new JButton("Valider");
+	 JButton retryButton = new JButton("Recommencer");
+	 JButton alarmClockButton = new JButton("Réveil");
+	 JButton radioButton = new JButton("Radio");
+	 JButton coffeeButton = new JButton("Machine à café");
 	
-	public boolean isChoiseAlarmClock, isChoiseRadio, isChoiseCoffee = false;
+	 boolean isChoiseAlarmClock, isChoiseRadio, isChoiseCoffee = false;
 	
-	public CAlarmAlarmClock alarmAlarmClock;
-	public CRadioAlarmClock radioAlarmClock;
-	public CCoffeeAlarmClock coffeeAlarmClock;
+	 CAlarmAlarmClock alarmAlarmClock;
+	 CRadioAlarmClock radioAlarmClock;
+	 CCoffeeAlarmClock coffeeAlarmClock;
 	
 	//constructeur
 	CWindow(){
 		
-		this.setTitle("TP_POO_Alarm Menu");
-		this.setSize(500,700);
+		this.setTitle("TP_POO_Alarm Menu"); //titre de la fenêtre
+		this.setSize(500,700);  //taille de la fenêtre
 		this.setLocationRelativeTo(null); //se placer au centre
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
@@ -308,9 +308,9 @@ public class CWindow extends JFrame{
 			isChoiseAlarmClock = true;
 			radioButton.setEnabled(false);
 			coffeeButton.setEnabled(false);
-			inputHourTime.setEnabled(false);
-			inputMinuteTime.setEnabled(false);
-			inputSecondTime.setEnabled(false);
+			//inputHourTime.setEnabled(false);
+			//inputMinuteTime.setEnabled(false);
+			//inputSecondTime.setEnabled(false);
 			
 			resultLabel.setText("Valider et votre réveil sonnera : " + inputHourTime.getText() + " heure(s), "+ inputMinuteTime.getText() +" minute(s) et "+ inputSecondTime.getText()+ " secondes après.");
 			alarmAlarmClock = new CAlarmAlarmClock(inputHourTime.getText() + ":" + inputMinuteTime.getText() + ":" + inputSecondTime.getText(),0);

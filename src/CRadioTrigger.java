@@ -1,14 +1,10 @@
 public class CRadioTrigger extends CRadio implements ITrigger<CRadioTrigger>{
 	
 	//classe utilisant l'héritage mutiple, elle récupère l'interface ITRigger qui permet de déclencher une action et CAlarm
-	/*..........ATTRIBUTS..........*/
-	//son de l'alarme
-	private String radiostation;
 	
 	//constructeur
 	CRadioTrigger(String end, String radiostation){
 		super(radiostation);
-		this.radiostation = radiostation;
 	}
 	
 	/*.........METHODES..........*/
