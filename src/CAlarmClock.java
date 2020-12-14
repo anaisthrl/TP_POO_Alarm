@@ -1,6 +1,6 @@
 public class CAlarmClock extends CWatch{
 
-	//Classe mère de CAlarmAlarmClock, CCoffeeAlarmClock et CRadioAlarmClock
+	//Classe mï¿½re de CAlarmAlarmClock, CCoffeeAlarmClock et CRadioAlarmClock
 	
     //constructeur
     CAlarmClock() {
@@ -10,7 +10,7 @@ public class CAlarmClock extends CWatch{
    /*.........METHODES........*/
     
     //verifie si on doit faire sonner le reveil
-    //Redéfinie dans CAlarmAlarmClock.java/ CCoffeeAlarmClock / CRadioAlarmClock
+    //Redï¿½finie dans CRingingAlarmClock.java/ CCoffeeAlarmClock / CRadioAlarmClock
     public void checkAlarm() {}
 
     //incrementer le reveil (via montre - chaine de compteur)

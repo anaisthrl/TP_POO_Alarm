@@ -2,45 +2,46 @@ import java.util.Scanner;
 
 public class App {
 	
-	//décommenter la version console pour l'utiliser
+	//dï¿½commenter la version console pour l'utiliser
 	
-	static CWindow windowMenu ; //utilisé dans la version application
-	static String heure, minutes, secondes; //utilisé dans la version console
+	static CWindow windowMenu ; //utilisï¿½ dans la version application
+	static String heure, minutes, secondes; //utilisï¿½ dans la version console
 	
 	public static void main(String[] args)
     {
 		/*..................MODE APPLICATION.............*/
-		
+
 		windowMenu = new CWindow();
 		if(windowMenu.isReload == true) {
 			System.out.println("eeeee");
 		}
 		
 		/*...................MODE CONSOLE.................*/
-		/*userInteractions();
-		//vérifie si l'utilisateur a choisi un objet
+/*
+		userInteractions();
+		//vï¿½rifie si l'utilisateur a choisi un objet
 		boolean isChoised = false ;
 		
 		while(isChoised == false) {
-			//pour l'objet à utiliser
+			//pour l'objet ï¿½ utiliser
 			Scanner inputObject = new Scanner(System.in);
 			
 			//choix de l'utilisateur
-			//choisir l'objet à utiliser
+			//choisir l'objet ï¿½ utiliser
 			System.out.println("Quel objet voulez vous utiliser ? ");
-			System.out.println("1 - Réveil");
+			System.out.println("1 - Reveil");
 			System.out.println("2 - Radio");
-			System.out.println("3 - Machine à café");
+			System.out.println("3 - Machine a cafe");
 			int choise = inputObject.nextInt();
 			
 			switch(choise){
-				 //choix du réveil
+				 //choix du rï¿½veil
 				case 1: goAlarmClock(); isChoised = true;
 					break;
 				//choix de la radio
 				case 2: goRadio(); isChoised = true ;
 					break;
-				//choix de la machine à café
+				//choix de la machine ï¿½ cafï¿½
 				case 3: goCafe(); isChoised = true;
 					break;
 				default : System.out.println("Erreur: vous n'avez rien choisi !");
@@ -50,15 +51,15 @@ public class App {
 	
 	//REVEIL
 	public static void goAlarmClock() {
-		//System.out.println("Dans combien de temps voulez vous vous réveiller ?");
+		//System.out.println("Dans combien de temps voulez vous vous rï¿½veiller ?");
 		
 		//userInteractions();
 		
-		//Création de l'alarme
-		CAlarmAlarmClock alarmAlarmClock1 = new CAlarmAlarmClock(heure + ":" + minutes + ":" + secondes); 
+		//Crï¿½ation de l'alarme
+		CRingingAlarmClock RingingAlarmClock = new CRingingAlarmClock(heure + ":" + minutes + ":" + secondes,1);
 								
 		//lancement de l'alarme
-		alarmAlarmClock1.rool();
+		RingingAlarmClock.rool();
 	}
 	
 	//RADIO
@@ -67,8 +68,8 @@ public class App {
 		
 		//userInteractions();
 		
-		//Création de l'alarme
-		CRadioAlarmClock radioAlarmClock1 = new CRadioAlarmClock(heure + ":" + minutes + ":" + secondes); 
+		//Crï¿½ation de l'alarme
+		CRadioAlarmClock radioAlarmClock1 = new CRadioAlarmClock(heure + ":" + minutes + ":" + secondes, 3);
 										
 		//lancement de l'alarme
 		radioAlarmClock1.rool();
@@ -76,12 +77,12 @@ public class App {
 	
 	//CAFE
 	public static void goCafe() {
-		//System.out.print("Dans combien de temps voulez vous avoir votre café de prêt ? ");
+		//System.out.print("Dans combien de temps voulez vous avoir votre cafe de pret ? ");
 		
 		//userInteractions();
 		
-		//Création de l'alarme
-		CCoffeeAlarmClock coffeeAlarmClock1 = new CCoffeeAlarmClock(heure + ":" + minutes + ":" + secondes); 
+		//Crï¿½ation de l'alarme
+		CCoffeeAlarmClock coffeeAlarmClock1 = new CCoffeeAlarmClock(heure + ":" + minutes + ":" + secondes,0);
 										
 		//lancement de l'alarme
 		coffeeAlarmClock1.rool();
@@ -91,33 +92,34 @@ public class App {
 	public static void userInteractions() {
 		
 		System.out.println("Bienvenue");
-		//va récupérer le texte tapé dans la console pour l'heure
+		//va rï¿½cupï¿½rer le texte tapï¿½ dans la console pour l'heure
 		Scanner inputAlarm = new Scanner(System.in);
 		
-		//nous n'avons pas d'heure limité, nous pouvons très bien nous réveiller dans 15 heures
+		//nous n'avons pas d'heure limite, nous pouvons tres bien nous reveiller dans 15 heures
 		System.out.println("Choisissez un nombre d'heure : ");
 		heure = inputAlarm.nextLine();
 		
-		//nous ne pouvons pas donner un nombre de minute supérieur à 59
-		//booleen qui va vérifier que le nombre de minute tapé est bon
+		//nous ne pouvons pas donner un nombre de minute superieur a 59
+		//booleen qui va verifier que le nombre de minute entrÃ© par l'user est bon
 		boolean minutesAreOk = false;
-		//tant que le nombre de minute tapé n'est as bon, on demande à l'utilisateur de le rentrer
+		//tant que le nombre de minute tapï¿½ n'est as bon, on demande ï¿½ l'utilisateur de le rentrer
 		while(minutesAreOk == false) {
 			System.out.println("Choisissez un nombre de minute : ");
 			minutes = inputAlarm.nextLine();
-			//si le nombre de minute est supérieur à 59 la condition n'est pas validé
-			if(Integer.parseInt(minutes) > 59) System.out.println("Erreur: Entrez un nombre de minutes inférieur à 60");
+			//si le nombre de minute est supï¿½rieur ï¿½ 59 la condition n'est pas validï¿½
+			if(Integer.parseInt(minutes) > 59) System.out.println("Erreur: Entrez un nombre de minutes inferieur a 60");
 			if(Integer.parseInt(minutes)<60) minutesAreOk = true;
 		}
 		
-		//nous ne pouvons pas donner un nombre de seconde supérieur à 59
+		//nous ne pouvons pas donner un nombre de seconde supï¿½rieur ï¿½ 59
 		boolean secondsAreOk = false;
 		while(secondsAreOk == false) {
 			System.out.println("Choisissez un nombre de seconde : ");
 			secondes = inputAlarm.nextLine();
-			if(Integer.parseInt(secondes) > 59) System.out.println("Erreur: Entrez un nombre de seconde inférieur à 60");
+			if(Integer.parseInt(secondes) > 59) System.out.println("Erreur: Entrez un nombre de seconde inferieur a 60");
 			if(Integer.parseInt(secondes)<60) secondsAreOk = true;
-		}*/
+		}
+*/
 	}
 		
 }

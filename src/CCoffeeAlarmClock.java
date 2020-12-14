@@ -8,14 +8,14 @@ public class CCoffeeAlarmClock extends CAlarmClock{
 	//string dans lequel est stockée l'heure à laquel le réveil doit sonner
 	private String end;//string dans lequel est stockée l'heure à laquel le réveil doit sonner
 	
-	private int nbOfCoffeeChoised = 0; //string dans lequel est stockée l'heure à laquel le réveil doit sonner
+	private int typeOfCoffeeChoised = 0; //string dans lequel est stockée l'heure à laquel le réveil doit sonner
 	String[] coffees = {"Expresso", "Cappuccino", "Deca", "Café au lait"};//tableau représentant le choix de café possibles
 	
 	//constructeur
-	CCoffeeAlarmClock(String end, int nbOfAlarmChoised) {
+	CCoffeeAlarmClock(String end, int typeOfCoffeeChoised) {
 		super();
 		this.end = end;
-		this.nbOfCoffeeChoised = nbOfAlarmChoised;
+		this.typeOfCoffeeChoised = typeOfCoffeeChoised;
 		
 		
 	}
@@ -25,7 +25,7 @@ public class CCoffeeAlarmClock extends CAlarmClock{
 	   public void checkAlarm(){
 	       if(super.toString().equals(end)){
 	        //activation de la radio
-	        new CCoffeeTrigger(end, coffees[this.nbOfCoffeeChoised]);
+	        new CCoffeeTrigger(end, coffees[this.typeOfCoffeeChoised]);
 	        //arrêt du compteur
 	        super.stopWatch();
 	       }
@@ -40,6 +40,6 @@ public class CCoffeeAlarmClock extends CAlarmClock{
 	}
 	
 	public void setNbOfCoffeeChoised(int nb) {
-		this.nbOfCoffeeChoised = nb;
+		this.typeOfCoffeeChoised = nb;
 	}
 }
