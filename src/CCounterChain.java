@@ -15,17 +15,17 @@ public class CCounterChain {
 		}
 	}
 		
-	/*.....Méthodes.....*/
+	/*.....Mï¿½thodes.....*/
 		
-	//incrémentation de ma chaine de compteur
+	//incrï¿½mentation de ma chaine de compteur
 	public void increment() {
 		boolean finish = false;
-		for (int i = tabCounter.length - 1; i >= 0 && !finish; i--) { //increment à partir de la fin
+		for (int i = tabCounter.length - 1; i >= 0 && !finish; i--) { //increment ï¿½ partir de la fin
 			finish = !tabCounter[i].increment();
 		}
 	}
 		
-	//remise à zéro de mes compteurs
+	//remise ï¿½ zï¿½ro de mes compteurs
 	public void resetToZero() {
 		for (CCounter counter : tabCounter) {
 			counter.resetToZero();
@@ -42,7 +42,7 @@ public class CCounterChain {
 		String val ="";
 		for (int i = 0; i < tabCounter.length; i++) {
 			val += tabCounter[i].toString();
-			if (i != tabCounter.length - 1) {
+			if (i != tabCounter.length -1) {
 				val += ':';
 			}
 		}
