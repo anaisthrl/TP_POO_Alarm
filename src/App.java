@@ -12,6 +12,9 @@ public class App {
 		/*..................MODE APPLICATION.............*/
 		
 		windowMenu = new CWindow();
+		if(windowMenu.isReload == true) {
+			System.out.println("eeeee");
+		}
 		
 		/*...................MODE CONSOLE.................*/
 		/*userInteractions();

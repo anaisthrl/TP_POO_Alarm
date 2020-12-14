@@ -42,7 +42,7 @@ public class CWindow extends JFrame{
 	 JButton radioButton = new JButton("Radio");
 	 JButton coffeeButton = new JButton("Machine à café");
 	
-	 boolean isChoiseAlarmClock, isChoiseRadio, isChoiseCoffee = false;
+	 boolean isChoiseAlarmClock, isChoiseRadio, isChoiseCoffee, isReload = false;
 	
 	 CAlarmAlarmClock alarmAlarmClock;
 	 CRadioAlarmClock radioAlarmClock;
@@ -308,9 +308,9 @@ public class CWindow extends JFrame{
 			isChoiseAlarmClock = true;
 			radioButton.setEnabled(false);
 			coffeeButton.setEnabled(false);
-			//inputHourTime.setEnabled(false);
-			//inputMinuteTime.setEnabled(false);
-			//inputSecondTime.setEnabled(false);
+			inputHourTime.setEnabled(false);
+			inputMinuteTime.setEnabled(false);
+			inputSecondTime.setEnabled(false);
 			
 			resultLabel.setText("Valider et votre réveil sonnera : " + inputHourTime.getText() + " heure(s), "+ inputMinuteTime.getText() +" minute(s) et "+ inputSecondTime.getText()+ " secondes après.");
 			alarmAlarmClock = new CAlarmAlarmClock(inputHourTime.getText() + ":" + inputMinuteTime.getText() + ":" + inputSecondTime.getText(),0);
